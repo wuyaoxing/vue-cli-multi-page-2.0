@@ -1,0 +1,174 @@
+.epm-md-print {
+  p,
+  ol,
+  ul,
+  pre,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  table,
+  blockquote {
+    margin-bottom: 1em
+  }
+  & blockquote>:first-child {
+    margin-top: 0;
+  }
+
+  & blockquote>:last-child {
+    margin-bottom: 0;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  h5 {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  h6 {
+    font-size: 12px;
+    font-weight: 600;
+  }
+  p {
+    overflow-wrap: break-word;
+  }
+  img {
+    max-width: 100%;
+    width: inherit;
+    // background-color: #fff;
+  }
+  pre {
+    border-width: 0;
+    padding: 10px 15px;
+    background: rgba(102,128,153,.1);
+
+    code {
+      background: none;
+      white-space: pre-wrap;
+    }
+  }
+  .CodeMirror-line {
+    background: none!important;
+  }
+  a {
+    color: #2F7BC1;
+    text-decoration: none;
+    word-break: break-all;
+    &:hover {
+      opacity: .8;
+      text-decoration: underline;
+    }
+  }
+
+  code {
+    padding: 4px;
+    font-size: 80%;
+    color: inherit;
+    background: rgba(102,128,153,.1);
+    word-wrap: break-word;
+    font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+  }
+  blockquote {
+    padding: 10px 15px;
+    color: #777;
+    border-left: 4px solid #999;
+    background: rgba(102,128,153,.1);
+  }
+  ol {
+    list-style-type: decimal;
+  }
+  ul {
+    list-style-type: disc;
+  }
+  ul ul {
+    list-style: circle;
+  }
+  ul ul ul{
+    list-style: square;
+  }
+  ol,
+  ul {
+    padding-left: 30px;
+  }
+  li>p {
+    margin: 3px 0;
+  }
+  li+li {
+    margin-top: .25em;
+  }
+  table {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+
+  table th {
+    font-weight: 600;
+  }
+
+  table th,
+  table td {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+  }
+
+  table tr {
+    background-color: #fff;
+    border-top: 1px solid #c6cbd1;
+  }
+
+  table tr:nth-child(2n) {
+    background-color: #f6f8fa;
+  }
+  dl {
+    padding: 0;
+  }
+
+  dl dt {
+    padding: 0;
+    margin-top: 16px;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  dl dd {
+    padding: 0 16px;
+    margin-bottom: 16px;
+  }
+  hr {
+    border: 0;
+    border-bottom: 1px solid #ddd;
+    padding: 0;
+    margin: 24px 0;
+  }
+  &>*:first-child {
+    margin-top: 0 !important;
+  }
+
+  &>*:last-child {
+    margin-bottom: 0 !important;
+  }
+}

@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 12px;
+  -webkit-text-size-adjust: 100%!important;
+  -ms-touch-action: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  color: @primary-text-color;
+  -webkit-overflow-scrolling: touch;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+a {
+  color: @link-color;
+  text-decoration: none;
+}
+
+ul.default,
+ol.default {
+  padding-left: 30px
+}
+
+ul.default {
+  list-style: disc
+}
+
+ol.default {
+  list-style: decimal
+}
+
+img {
+  width: 100%
+}
+
+@media screen and (max-device-width: 359px) {
+  html {
+    font-size: 10px
+  }
+}
+
+@media screen and (min-device-width: 360px) and (max-device-width: 479px) {
+  html {
+    font-size: 12px
+  }
+}
+
+@media screen and (min-device-width: 480px) {
+  html {
+    font-size: 14px
+  }
+}
