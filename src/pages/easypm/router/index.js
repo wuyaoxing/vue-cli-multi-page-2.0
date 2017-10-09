@@ -9,13 +9,16 @@ const isDevMode = process.env.NODE_ENV !== 'production'
 const nativeEncode = encodeURIComponent
 window.encodeURIComponent = str => nativeEncode(str).replace(/%2f/ig, '/')
 
-const AsyncComp = pagePath => () => import(`views/${pagePath}`)
+// const AsyncComp = pagePath => () => import(`views/${pagePath}`)
 
 const collect = {
     path: '/collect',
     name: 'collect',
     icon: 'epm-icon-star-o',
-    component: AsyncComp('collect/collect')
+    component: () => import(
+        /* webpackChunkName: "collect" */
+        'views/collect/collect'
+    )
 }
 
 const projects = {
@@ -23,7 +26,10 @@ const projects = {
     alias: '/',
     name: 'projects',
     icon: 'epm-icon-file',
-    component: AsyncComp('project/projects')
+    component: () => import(
+        /* webpackChunkName: "projects" */
+        'views/project/projects'
+    )
 }
 
 export const devNavRoutes = [
@@ -33,12 +39,18 @@ export const devNavRoutes = [
         path: '/folder',
         name: 'folder',
         icon: 'epm-icon-docs',
-        component: AsyncComp('folder/folder')
+        component: () => import(
+            /* webpackChunkName: "folder" */
+            'views/folder/folder'
+        )
     }, {
         path: '/team',
         name: 'team',
         icon: 'epm-icon-team',
-        component: AsyncComp('team/team')
+        component: () => import(
+            /* webpackChunkName: "team" */
+            'views/team/team'
+        )
     }
 ]
 
@@ -52,12 +64,18 @@ export default new Router({
         {
             name: 'project',
             path: '/projects/:projectId',
-            component: AsyncComp('project/project'),
+            component: () => import(
+                /* webpackChunkName: "project" */
+                'views/project/project'
+            )
         },
         {
             name: '404',
             path: '/404',
-            component: AsyncComp('404/404'),
+            component: () => import(
+                /* webpackChunkName: "404" */
+                'views/404/404'
+            )
         }, {
             path: '*',
             redirect: {
