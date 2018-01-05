@@ -11,7 +11,6 @@ Object.keys(baseWebpackConfig.entry).forEach(name => {
     baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
 })
 
-// merge webpack.dev.conf.js 的配置和 webpack.base.conf.js 的配置
 module.exports = merge(baseWebpackConfig, {
     module: {
         rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
@@ -19,7 +18,6 @@ module.exports = merge(baseWebpackConfig, {
     // cheap-module-eval-source-map is faster for development
     devtool: '#cheap-module-eval-source-map',
     plugins: [
-        // DefinePlugin 允许创建一个在编译时可以配置的全局常量
         new webpack.DefinePlugin({
             'process.env': config.dev.env,
         }),

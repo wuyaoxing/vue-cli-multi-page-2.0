@@ -3,30 +3,24 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
-const resolve = dir => path.join(__dirname, '..', dir) // 绝对路径
+const resolve = dir => path.join(__dirname, '..', dir)
 
 module.exports = {
-    // 入口
     entry: Object.assign({}, utils.entries()),
-    // 输出
     output: {
-        path: config.build.assetsRoot, // 编译输出的静态资源根路径
-        filename: '[name].js', // 编译输出的文件名
+        path: config.build.assetsRoot,
+        filename: '[name].js',
         chunkFilename: '[name].js',
-        // 正式发布环境下编译输出的上线路径的根路径
         publicPath: process.env.NODE_ENV === 'production'
             ? config.build.assetsPublicPath
             : config.dev.assetsPublicPath
     },
     resolve: {
-        // 匹配目录
         modules: [
             resolve('src'),
             resolve('node_modules'),
         ],
-        // 自动补全的扩展名
         extensions: ['.js', '.vue', '.json'],
-        // 别名
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
             fonts: 'assets/fonts',

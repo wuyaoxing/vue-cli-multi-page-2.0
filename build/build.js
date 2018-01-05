@@ -2,7 +2,7 @@ require('./check-versions')()
 
 process.env.NODE_ENV = 'production'
 
-const ora = require('ora') // Elegant terminal spinner，貌似什么都不能看到
+const ora = require('ora')
 const rm = require('rimraf')
 const path = require('path')
 const chalk = require('chalk')

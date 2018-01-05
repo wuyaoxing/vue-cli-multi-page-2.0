@@ -24,9 +24,9 @@ const webpackConfig = merge(baseWebpackConfig, {
     },
     devtool: config.build.productionSourceMap ? '#source-map' : false,
     output: {
-        path: config.build.assetsRoot, // 编译输出目录
-        filename: utils.assetsPath('js/[name].[chunkhash].js'), // 编译输出文件名
-        chunkFilename: utils.assetsPath('js/[name].[chunkhash].js') // 没有指定输出名的文件输出的文件名
+        path: config.build.assetsRoot,
+        filename: utils.assetsPath('js/[name].[chunkhash].js'),
+        chunkFilename: utils.assetsPath('js/[name].[chunkhash].js')
     },
     plugins: [
         // http://vuejs.github.io/vue-loader/en/workflow/production.html
