@@ -7,10 +7,6 @@ import components from 'components'
 
 import 'core/imgError'
 
-import FastClick from 'fastclick'
-
-FastClick.attach(document.body)
-
 Vue.use(mixins)
 Vue.use(plugins)
 Vue.use(base)
