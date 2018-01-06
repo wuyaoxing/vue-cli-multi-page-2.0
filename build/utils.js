@@ -13,27 +13,9 @@ const fs = require('fs')
 
 const isProd = process.env.NODE_ENV === 'production'
 
-const cn = {
-    index: '页面 - 导航',
-    login: 'EasyPM - 登录',
-    easypm: '工作台',
-    test: '测试页面'
-}
-const en = {
-    index: 'index',
-    login: 'login',
-    easypm: 'easypm',
-    test: 'test'
-}
+const { cn, en, outputSource, prodIgnore, hbsSource } = require('./config')
 
 const titleSource = config.build.lang === 'zh-CN' ? cn : en
-
-const outputSource = {
-    index: 'index.jsp',
-    login: 'login.jsp',
-    easypm: 'easypm.jsp',
-    test: 'test.jsp',
-}
 
 // pages
 const devPages = fs.readdirSync(PAGE_PATH).reduce((acc, filename) => {
@@ -48,8 +30,6 @@ const devPages = fs.readdirSync(PAGE_PATH).reduce((acc, filename) => {
     }
     return acc
 }, [])
-
-const prodIgnore = ['index']
 
 const prodPages = devPages.filter(item => prodIgnore.indexOf(item.name))
 
@@ -82,13 +62,6 @@ exports.entries = () =>
     }, {})
 
 // 多页面输出配置
-
-const hbsSource = {
-    index: `<div id="app"></div>`,
-    login: `<login id="app"></login>`,
-    easypm: `<div id="app"></div>`,
-    test: `<div id="app"></div>`,
-}
 
 exports.htmlPlugin = () => {
     const layoutPath = `${PAGE_PATH}/layout.hbs`
